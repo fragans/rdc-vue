@@ -1,7 +1,7 @@
 <template>
   <div class="py-4 px-2 bg-white rounded-xl shadow-lg mb-4">
-    <div class="accordion-title flex justify-between px-4" @click="isExpanded = !isExpanded">
-      <span class="capitalize text-lg font-bold">
+    <div class="accordion-title flex justify-between px-4 cursor-pointer" @click="isExpanded = !isExpanded">
+      <span class="capitalize text-lg font-bold select-none">
         {{ title  }}
       </span>
       <button class="px-2 font-bold">
