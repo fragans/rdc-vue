@@ -13,11 +13,9 @@
         </span>
       </button>
     </div>
-    <transition name="slide-bottom" mode="out-in">
-      <div v-if="isExpanded" class="px-2 pb-2 pt-4">
-        <slot name="content"></slot>  
-      </div>
-    </transition>
+    <div v-if="isExpanded" class="px-2 pb-2 pt-4">
+      <slot name="content"></slot>  
+    </div>
   </div>
 </template>
 

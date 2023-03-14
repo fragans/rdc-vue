@@ -22,8 +22,8 @@
   <div class="event-content px-4">
     <event-accordion title="registrasi">
       <template #content>
-        <!-- <form-register /> -->
-        <p>Belum tersedia</p>
+        <form-register />
+        <!-- <p>Belum tersedia</p> -->
       </template>
     </event-accordion>
 
@@ -58,21 +58,17 @@ import EventAccordion from "../components/event/accordion.vue"
 import EventHotel from "../components/event/hotel.vue"
 import EventStaff from "../components/event/staff.vue"
 import EventDancesLink from "../components/event/dancesLink.vue"
+import FormRegister from "../components/form/register.vue"
 export default{
   async setup (){
-
-
     const event = ref(null)
     try {
       const url = `${import.meta.env.VITE_SELF_HOST}/json/data.json`
-      console.log('url=', url);
       const res = await axios.get(url)
       const { data : {
         events: [first]
       }} = res
       event.value = first
-
-      console.log(first)  
     } catch (error) {
       console.error(error)
     }
@@ -80,10 +76,11 @@ export default{
     return { event }
   },
   components: {
+    FormRegister,
     EventAccordion,
     EventDancesLink,
     EventHotel,
-    EventStaff
+    EventStaff    
   },
   computed: {
     backgroundImage () {
