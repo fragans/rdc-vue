@@ -1,5 +1,6 @@
 <template> 
-  <div class="max-w-4xl mx-auto">
+
+<div class="max-w-4xl mx-auto">
   <div class="event-thumbnail bg-cover bg-center " style="padding-bottom: 141%;" :style="backgroundImage" />
   <div class="event-detail pt-2 pb-4 px-4">
     <span class="p-1 px-2 text-sm rounded-xl bg-gray-400 text-white"> {{ event.category  }}</span>
@@ -16,36 +17,47 @@
     <p>{{ event.description }}</p>
   </div>
   <div class="event-content px-4">
-    <accordion title="registrasi">
+    <event-accordion title="registrasi">
       <template #content>
         <!-- <form-register /> -->
         <p>Belum tersedia</p>
       </template>
-    </accordion>
+    </event-accordion>
   </div>
-  </div>
+</div>
+  
 </template>
 
 <script>
-// import { ref } from "vue"
+import { ref } from "vue"
+import axios from 'axios'
+import EventAccordion from "../components/event/accordion.vue"
 export default{
-  setup (){
-    // console.log('async setup (){')
-    // const event = ref(null)
-    // const res = await fetch(`${import.meta.env.VITE_SELF_HOST}/json/data.json`)
-    // // const {events : [first] } = res.json()
+  async setup (){
+    const event = ref(null)
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_SELF_HOST}/json/data.json`)
+      const { data : {
+        events: [first]
+      }} = res
+      event.value = first
 
-    // event.value = res.json()
-    // return { event }
-  },
-  data () {
-    return {
-      event: ''
+      console.log(first)  
+    } catch (error) {
+      console.error(error)
     }
+    
+    return { event }
   },
-  async created() {
-    const res = await fetch(`${import.meta.env.VITE_SELF_HOST}/json/data.json`)
-    this.event = res.json()
+  components: {
+    EventAccordion
+  },
+  computed: {
+    backgroundImage () {
+      return {
+        backgroundImage: `url(${import.meta.env.VITE_SELF_HOST}/images/poster_rdc.jpeg)`
+      }
+    }
   }
 
 }
