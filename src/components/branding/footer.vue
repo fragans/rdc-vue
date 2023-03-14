@@ -9,7 +9,7 @@
               <div class="contact">
                 <a :href="contactLink(item)" class="flex items-center gap-3 p-2 rounded border border-white">
                   <font-awesome-icon icon="fa-solid fa-envelope" v-if="item.phone" />
-                  <font-awesome-icon icon="fa-solid fa-phone" v-if="item.mail" />
+                  <font-awesome-icon icon="fa-brands fa-whatsapp" v-if="item.mail" />
                   <p class="">
                     {{ item.name }}
                   </p>

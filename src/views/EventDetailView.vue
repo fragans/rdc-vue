@@ -26,7 +26,20 @@
         <p>Belum tersedia</p>
       </template>
     </event-accordion>
-  </div>
+
+    <event-accordion title="dances">
+      <template #content>
+        <event-dances-link />
+      </template>
+    </event-accordion>
+
+    <event-accordion title="Lokasi">
+      <template #content>
+        <event-hotel :hotel="event.hotel" />
+      </template>
+    </event-accordion>
+
+  </div>  
 
 </div>
   
@@ -36,6 +49,8 @@
 import { ref } from "vue"
 import axios from 'axios'
 import EventAccordion from "../components/event/accordion.vue"
+import EventHotel from "../components/event/hotel.vue"
+import EventDancesLink from "../components/event/dancesLink.vue"
 export default{
   async setup (){
     const event = ref(null)
@@ -54,7 +69,9 @@ export default{
     return { event }
   },
   components: {
-    EventAccordion
+    EventAccordion,
+    EventDancesLink,
+    EventHotel
   },
   computed: {
     backgroundImage () {
