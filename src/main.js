@@ -38,7 +38,11 @@ const app = createApp(App)
 
 app.use(router)
 
-console.log(import.meta.env.VITE_SELF_HOST)
+console.log(import.meta.env.VITE_DEV_SELF_HOST)
+console.log(import.meta.env.VITE_PROD_SELF_HOST)
+console.log(import.meta.env.BASE_URL)
+console.log(import.meta.env.MODE)
+
 
 app.use(VueAxios, axios)
 

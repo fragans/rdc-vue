@@ -64,7 +64,6 @@ export default {
   },
   computed: {
     imageLink () {
-      
       return `${import.meta.env.VITE_SELF_HOST}/images/RDCv2.png`
     }
   },
