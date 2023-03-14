@@ -7,7 +7,7 @@
           <div class="grid grid-rows-2 grid-cols-2 gap-4">
             <div v-for="(item, key) in contacts2" :key="key" >
               <div class="contact">
-                <a :href="contactLink" class="flex items-center gap-3 p-2 rounded border border-white">
+                <a :href="contactLink(item)" class="flex items-center gap-3 p-2 rounded border border-white">
                   <p class="">
                     {{ item.name }}
                   </p>
@@ -63,7 +63,7 @@ export default {
   computed: {
     imageLink () {
       
-      return `${import.meta.env.VITE_SELF_HOST}/RDCv2.png`
+      return `${import.meta.env.VITE_SELF_HOST}/images/RDCv2.png`
     }
   },
   methods: {

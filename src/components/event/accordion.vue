@@ -6,10 +6,10 @@
       </span>
       <button class="px-2 font-bold">
         <span v-show="isExpanded">
-          <b-icon-chevron-up class="text-xl font-bold text-gray-600" />
+          <font-awesome-icon icon="fa-solid fa-chevron-up" />
         </span>
         <span v-show="!isExpanded">
-          <b-icon-chevron-down class="text-xl font-bold text-gray-600" />
+          <font-awesome-icon icon="fa-solid fa-chevron-down" />
         </span>
       </button>
     </div>
