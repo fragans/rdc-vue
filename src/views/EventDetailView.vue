@@ -64,7 +64,9 @@ export default{
 
     const event = ref(null)
     try {
-      const res = await axios.get(`${import.meta.env.VITE_SELF_HOST}/json/data.json`)
+      const url = `${import.meta.env.VITE_SELF_HOST}/json/data.json`
+      console.log('url=', url);
+      const res = await axios.get(url)
       const { data : {
         events: [first]
       }} = res

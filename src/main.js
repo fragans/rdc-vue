@@ -38,7 +38,8 @@ const app = createApp(App)
 
 app.use(router)
 
-console.log('VITE_DEV_SELF_HOST=' ,import.meta.env.VITE_SELF_HOST)
+console.log('VITE_SELF_HOST=' ,import.meta.env.VITE_SELF_HOST)
+console.log('BASE_URL=' ,import.meta.env.BASE_URL)
 console.log('MODE=' ,import.meta.env.MODE)
 
 
