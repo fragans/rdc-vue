@@ -8,8 +8,8 @@
             <div v-for="(item, key) in contacts2" :key="key" >
               <div class="contact">
                 <a :href="contactLink(item)" class="flex items-center gap-3 p-2 rounded border border-white">
-                  <font-awesome-icon icon="fa-solid fa-envelope" v-if="item.phone" />
-                  <font-awesome-icon icon="fa-brands fa-whatsapp" v-if="item.mail" />
+                  <font-awesome-icon icon="fa-solid fa-envelope" v-if="item.mail" />
+                  <font-awesome-icon icon="fa-brands fa-whatsapp" v-if="item.phone" />
                   <p class="">
                     {{ item.name }}
                   </p>
