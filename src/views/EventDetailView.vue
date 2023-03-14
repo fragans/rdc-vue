@@ -39,6 +39,12 @@
       </template>
     </event-accordion>
 
+    <event-accordion title="Staff">
+      <template #content>
+        <event-staff :list="event.staff" />
+      </template>
+    </event-accordion>
+
   </div>  
 
 </div>
@@ -50,9 +56,12 @@ import { ref } from "vue"
 import axios from 'axios'
 import EventAccordion from "../components/event/accordion.vue"
 import EventHotel from "../components/event/hotel.vue"
+import EventStaff from "../components/event/staff.vue"
 import EventDancesLink from "../components/event/dancesLink.vue"
 export default{
   async setup (){
+
+
     const event = ref(null)
     try {
       const res = await axios.get(`${import.meta.env.VITE_SELF_HOST}/json/data.json`)
@@ -71,7 +80,8 @@ export default{
   components: {
     EventAccordion,
     EventDancesLink,
-    EventHotel
+    EventHotel,
+    EventStaff
   },
   computed: {
     backgroundImage () {

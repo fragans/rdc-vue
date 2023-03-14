@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+// import { createMetaManager } from 'vue-meta'
 
 import './assets/styles.css'
 
@@ -36,6 +37,8 @@ library.add(faWhatsapp)
 const app = createApp(App)
 
 app.use(router)
+
+console.log(import.meta.env.VITE_SELF_HOST)
 
 app.use(VueAxios, axios)
 
