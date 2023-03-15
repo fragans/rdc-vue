@@ -20,62 +20,67 @@
         </div>
       </label>  
     </fieldset>
-    <template v-if="tipe.value">
-      <form-title :title="tipe.value" >
-        <template #fields>
-          <template v-if="!success" >
-            <template v-if="isCouple">
-              <p>{{ formCounter }}. Partisipan {{ coupleGender }}</p>
+    <transition name="shrink" mode="out-in">
+      <template v-if="tipe.value">
+        <form-title :title="tipe.value" >
+          <template #fields>
+            <template v-if="!success" >
+              <transition mode="out-in" name="shrink">
+                <template v-if="isCouple">
+                  <p>{{ formCounter }}. Partisipan {{ coupleGender }}</p>
+                </template>
+              </transition>
+              
+              <label for="nama">
+                <span class="capitalize text-sm">nama lengkap</span>
+                <input required type="text" id="nama" v-model="name.value" @input="$emit('input', $event.target.value)" />
+              </label>
+              
+              <label for="address">
+                <span class="capitalize text-sm">alamat</span>
+                <input required type="text" id="address" v-model="address.value" />
+              </label>
+              
+              <label for="city">
+                <span class="capitalize text-sm">Kota</span>
+                <input required type="text"  id="city" v-model="city.value" />
+              </label>
+          
+              <label for="tel">
+                <span class="capitalize text-sm">Nomor Telepon/Handphone</span>
+                <input required type="tel"  id="tel" v-model="tel.value" minlength="10" maxlength="14" onkeypress="return /[+,0-9]/i.test(event.key)"/>
+              </label>
+          
+              <label for="codeArea">
+                <span class="capitalize text-sm">Kode pos</span>
+                <input required type="tel"  id="codeArea" v-model="codeArea.value" minlength="5" maxlength="5" onkeypress="return /[+,0-9]/i.test(event.key)"/>
+              </label>
+          
+              <label for="country">
+                <span class="capitalize text-sm">Negara</span>
+                <input required type="text"  id="country" v-model="country.value"/>
+              </label>
+          
+              <label for="email">
+                <span class="capitalize text-sm">Email</span>
+                <input required type="email"  id="email" v-model="email.value"/>
+              </label>
+              <div class="pt-4">
+                <button class="capitalize w-full bg-green-400 text-white font-bold rounded py-2">{{ daftarLabel }}</button>
+              </div>
             </template>
-            
-            <label for="nama">
-              <span class="capitalize text-sm">nama lengkap</span>
-              <input required type="text" id="nama" v-model="name.value" @input="$emit('input', $event.target.value)" />
-            </label>
-            
-            <label for="address">
-              <span class="capitalize text-sm">alamat</span>
-              <input required type="text" id="address" v-model="address.value" />
-            </label>
-            
-            <label for="city">
-              <span class="capitalize text-sm">Kota</span>
-              <input required type="text"  id="city" v-model="city.value" />
-            </label>
-        
-            <label for="tel">
-              <span class="capitalize text-sm">Nomor Telepon/Handphone</span>
-              <input required type="tel"  id="tel" v-model="tel.value" minlength="10" maxlength="14" onkeypress="return /[+,0-9]/i.test(event.key)"/>
-            </label>
-        
-            <label for="codeArea">
-              <span class="capitalize text-sm">Kode pos</span>
-              <input required type="tel"  id="codeArea" v-model="codeArea.value" minlength="5" maxlength="5" onkeypress="return /[+,0-9]/i.test(event.key)"/>
-            </label>
-        
-            <label for="country">
-              <span class="capitalize text-sm">Negara</span>
-              <input required type="text"  id="country" v-model="country.value"/>
-            </label>
-        
-            <label for="email">
-              <span class="capitalize text-sm">Email</span>
-              <input required type="email"  id="email" v-model="email.value"/>
-            </label>
-            <div class="pt-4">
-              <button class="capitalize w-full bg-green-400 text-white font-bold rounded py-2">{{ daftarLabel }}</button>
-            </div>
+            <template v-else>
+              <p class="capitalize"> berhasil !! </p>
+            </template>
           </template>
-          <template v-else>
-            <p class="capitalize"> berhasil !! </p>
-          </template>
-        </template>
-      </form-title>
-    </template>
+        </form-title>
+      </template>
+    </transition>
   </form>
 </template>
 
 <script>
+
 import FormTitle from '../form/title.vue'
 import axios from 'axios'
 export default {
@@ -223,7 +228,7 @@ export default {
 
 <style lang="postcss">
 input[type=text], input[type=tel], input[type=email] {
-  @apply px-2 py-2 drop-shadow-md w-full bg-gray-100;
+  @apply px-2 py-2 w-full border-gray-600 outline-offset-2 outline-1 outline outline-gray-300 rounded bg-gray-50 focus:outline-2 focus:outline-gray-500;
 }
 label {
   @apply pb-2;

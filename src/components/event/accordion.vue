@@ -13,9 +13,11 @@
         </span>
       </button>
     </div>
-    <div v-if="isExpanded" class="px-2 pb-2 pt-4">
-      <slot name="content"></slot>  
-    </div>
+    <transition name="shrink" mode="out-in">
+      <div v-if="isExpanded" class="px-2 pb-2 pt-4">
+        <slot name="content"></slot>  
+      </div>
+    </transition>
   </div>
 </template>
 

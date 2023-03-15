@@ -1,7 +1,6 @@
 <template>
   <div class="flex flex-col">
     <hr class="my-4">
-
     <h3 class="font-bold capitalize">Pendaftaran Partisipan {{ gender }} </h3>
     <slot name="fields">
     </slot>
