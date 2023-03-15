@@ -12,15 +12,15 @@
               </p>
               <div class="contact">
                 <div class="flex items-center gap-3 ">
-                  <template v-if="contactPhone(item)">
-                    <a :href="item.mail" class="p-2 rounded border border-white flex items-center gap-3 min-w-[100px]">
+                  <template v-if="item.mail">
+                    <a :href="contactPhone(item)" class="p-2 rounded border border-white flex items-center gap-3 min-w-[100px]">
                       <font-awesome-icon icon="fa-solid fa-envelope"   />
                       <span class="capitalize">email</span>
                     </a>
                     
                   </template>
-                  <template v-if="contactMail(item)">
-                    <a :href="item.phone" class="p-2 rounded border border-white flex items-center gap-3 min-w-[100px]">
+                  <template v-if="item.phone">
+                    <a :href="contactMail(item)" class="p-2 rounded border border-white flex items-center gap-3 min-w-[100px]">
                       <font-awesome-icon icon="fa-brands fa-whatsapp"  />
                       <span class="capitalize">whatsapp</span>
                     </a>
