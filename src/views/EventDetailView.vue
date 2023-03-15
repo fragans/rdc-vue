@@ -1,5 +1,4 @@
 <template> 
-
 <div class="max-w-4xl mx-auto bg-gray-100">
   <div class="event-thumbnail bg-cover bg-center " style="padding-bottom: 141%;" :style="backgroundImage" />
 
@@ -53,7 +52,10 @@
 
 <script>
 import { ref } from "vue"
+import { useHead } from '@unhead/vue'
+
 import axios from 'axios'
+
 import EventAccordion from "../components/event/accordion.vue"
 import EventHotel from "../components/event/hotel.vue"
 import EventStaff from "../components/event/staff.vue"
@@ -61,6 +63,25 @@ import EventDancesLink from "../components/event/dancesLink.vue"
 import FormRegister from "../components/form/register.vue"
 export default{
   async setup (){
+    let gtIsReady = ref(false)
+    const testGT = function () {
+      // gtIsReady.value = true
+      // console.log('test gt');
+      // console.log(new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element'))
+      // eslint-disable-next-line no-undef
+      // new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element')
+    }
+    useHead({
+      script: [
+        {
+          hid: 'google-translate',
+          src: '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+          async: true,
+          callback: testGT()
+        }
+      ]
+    })
+    
     const event = ref(null)
     try {
       const url = `${import.meta.env.VITE_SELF_HOST}/json/data.json`
@@ -73,14 +94,20 @@ export default{
       console.error(error)
     }
     
-    return { event }
+    return { event , gtIsReady}
   },
   components: {
-    FormRegister,
     EventAccordion,
     EventDancesLink,
     EventHotel,
-    EventStaff    
+    EventStaff,
+    FormRegister 
+  },
+  mounted() {
+    this.$nextTick(()=> {
+      // eslint-disable-next-line no-undef
+      // new  google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element')
+    })
   },
   computed: {
     backgroundImage () {
