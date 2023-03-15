@@ -1,30 +1,33 @@
 <template>
   <form @submit.prevent="register">
-    <fieldset class="w-full grid grid-cols-2 gap-4">
-      <label for="male" class="select-none bg-gray-100 p-4 flex rounded-xl">
-        <input type="radio" id="male" name="tipe" value="male" v-model="tipe.value">
-        <div class="pl-2 lg:pl-5">
-          Pria
-        </div>
-      </label>
-      <label for="female" class="select-none bg-gray-100 p-4 flex rounded-xl">
-        <input type="radio" id="female" name="tipe" value="female" v-model="tipe.value">
-        <div class="pl-2 lg:pl-5">
-          Wanita
-        </div>
-      </label>  
-      <label for="couple" class="select-none bg-gray-100 p-4 flex rounded-xl">
-        <input type="radio" id="couple" name="tipe" value="couple" v-model="tipe.value">
-        <div class="flex pl-2 lg:pl-5 items-center">
-          Berpasangan
-        </div>
-      </label>  
-    </fieldset>
+    <template v-if="!fetchState.sent">
+      <fieldset class="w-full grid grid-cols-2 md:grid-cols-3 gap-4">
+        <label for="male" class="select-none bg-gray-100 p-4 flex rounded-xl">
+          <input type="radio" id="male" name="tipe" value="male" v-model="tipe.value">
+          <div class="pl-2 lg:pl-5">
+            Pria
+          </div>
+        </label>
+        <label for="female" class="select-none bg-gray-100 p-4 flex rounded-xl">
+          <input type="radio" id="female" name="tipe" value="female" v-model="tipe.value">
+          <div class="pl-2 lg:pl-5">
+            Wanita
+          </div>
+        </label>  
+        <label for="couple" class="select-none bg-gray-100 p-4 flex rounded-xl">
+          <input type="radio" id="couple" name="tipe" value="couple" v-model="tipe.value">
+          <div class="flex pl-2 lg:pl-5 items-center">
+            Berpasangan
+          </div>
+        </label>  
+      </fieldset>
+    </template>
+    
     <transition name="shrink" mode="out-in">
       <template v-if="tipe.value">
-        <form-title :title="tipe.value" >
+        <form-title v-if="!fetchState.sent" :title="tipe.value" >
           <template #fields>
-            <template v-if="!success" >
+            <template v-if="!fetchState.sent" >
               <transition mode="out-in" name="shrink">
                 <template v-if="isCouple">
                   <p>{{ formCounter }}. Partisipan {{ coupleGender }}</p>
@@ -33,49 +36,62 @@
               
               <label for="nama">
                 <span class="capitalize text-sm">nama lengkap</span>
-                <input required type="text" id="nama" v-model="name.value" @input="$emit('input', $event.target.value)" />
+                <input :disabled="fetchState.loading" required type="text" id="nama" v-model="name.value" @input="$emit('input', $event.target.value)" />
               </label>
               
               <label for="address">
                 <span class="capitalize text-sm">alamat</span>
-                <input required type="text" id="address" v-model="address.value" />
+                <input :disabled="fetchState.loading" required type="text" id="address" v-model="address.value" />
               </label>
               
               <label for="city">
                 <span class="capitalize text-sm">Kota</span>
-                <input required type="text"  id="city" v-model="city.value" />
+                <input :disabled="fetchState.loading" required type="text"  id="city" v-model="city.value" />
               </label>
           
               <label for="tel">
                 <span class="capitalize text-sm">Nomor Telepon/Handphone</span>
-                <input required type="tel"  id="tel" v-model="tel.value" minlength="10" maxlength="14" onkeypress="return /[+,0-9]/i.test(event.key)"/>
+                <input :disabled="fetchState.loading" required type="tel"  id="tel" v-model="tel.value" minlength="10" maxlength="14" onkeypress="return /[+,0-9]/i.test(event.key)"/>
               </label>
           
               <label for="codeArea">
                 <span class="capitalize text-sm">Kode pos</span>
-                <input required type="tel"  id="codeArea" v-model="codeArea.value" minlength="5" maxlength="5" onkeypress="return /[+,0-9]/i.test(event.key)"/>
+                <input :disabled="fetchState.loading" required type="tel"  id="codeArea" v-model="codeArea.value" minlength="5" maxlength="5" onkeypress="return /[+,0-9]/i.test(event.key)"/>
               </label>
           
               <label for="country">
                 <span class="capitalize text-sm">Negara</span>
-                <input required type="text"  id="country" v-model="country.value"/>
+                <input :disabled="fetchState.loading" required type="text"  id="country" v-model="country.value"/>
               </label>
           
               <label for="email">
                 <span class="capitalize text-sm">Email</span>
-                <input required type="email"  id="email" v-model="email.value"/>
+                <input :disabled="fetchState.loading" required type="email"  id="email" v-model="email.value"/>
               </label>
               <div class="pt-4">
-                <button class="capitalize w-full bg-green-400 text-white font-bold rounded py-2">{{ daftarLabel }}</button>
+                <button class="capitalize w-full bg-green-400 text-white font-bold rounded py-2">
+                  <template v-if="!fetchState.loading">
+                    {{ buttonDaftarLabel }}
+                  </template>
+                  <template v-if="fetchState.loading">
+                    <p class="capitalize"> loading ...</p>
+                  </template>
+                </button>
               </div>
-            </template>
-            <template v-else>
-              <p class="capitalize"> berhasil !! </p>
             </template>
           </template>
         </form-title>
       </template>
     </transition>
+
+    <template v-if="fetchState.sent">
+      <template v-if="fetchState.success">
+        <p class="capitalize"> berhasil !! </p>
+      </template>
+      <template v-if="fetchState.error">
+        <p class="capitalize"> terjadi kesalahan </p>
+      </template>
+    </template>
   </form>
 </template>
 
@@ -116,11 +132,16 @@ export default {
       },
       formCounter: 0,
       body: {},
-      success: false
+      fetchState: {
+        sent: false,
+        loading: false,
+        success: false,
+        error: false
+      }
     }
   },
   computed: {
-    daftarLabel () {
+    buttonDaftarLabel () {
       if (this.formCounter >= 2) {
         return 'daftarkan pasangan'
       }
@@ -142,7 +163,7 @@ export default {
     },
     coupleGender () {
       if (this.isCouple) {
-        return this.formCounter === 1 ? 'male' : 'female'
+        return this.formCounter === 1 ? 'Pria' : 'Wanita'
       }
       return ''
     }
@@ -209,18 +230,31 @@ export default {
       this.country.value = ''
       this.email.value = ''
     },  
+    dummyReq (res) {
+      return new Promise(()=> {
+        setTimeout(() => {
+          this.fetchState.loading= false
+          this.fetchState.success = true
+          this.fetchState.sent = true
+          return res
+        }, 1500);
+      })
+    },
     async sendForm () {
+      console.log('sedning');
+      this.fetchState.loading = true
       try {
-        const res = await axios.post(
-          'api.domain.com/insert',
-          this.body
+        const res = await axios.get(
+          'https://jsonplaceholder.typicode.com/todos/1',
         )
-        console.log(res)
-        this.success = true
+        await this.dummyReq(res)
       } catch (error) {
+        console.log('console.error(error)');
         console.error(error);
+        this.fetchState.success = false
+        this.fetchState.sent = true
       }
-
+      
     }
   }
 }
