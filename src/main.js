@@ -49,8 +49,11 @@ app.use(createHead())
 app.use(VueAxios, axios)
 
 app.component('font-awesome-icon', FontAwesomeIcon)
+/**
+ * Top-level await is not available
+ * await router.isReady()
+ */
 
-await router.isReady()
 
 app.mount('#app')
 
