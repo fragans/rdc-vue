@@ -1,5 +1,5 @@
 <template>
-  <div @click="deploy" class="fixed top-6 cursor-pointer flex justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 shadow-lg">
+  <div @click="deploy" class="fixed top-14 cursor-pointer flex justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 shadow-lg">
     <transition mode="out-in" name="shrink">
       <div id="google_translate_element" class=""></div>
     </transition>
