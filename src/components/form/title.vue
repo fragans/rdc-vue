@@ -44,7 +44,7 @@ export default {
       } else if (this.title === 'female') {
         gender = 'Wanita'
       } else{
-        gender = 'Berpasangan'
+        gender = 'Pasangan'
       }
       return gender
     }

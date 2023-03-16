@@ -17,7 +17,7 @@
         <label for="couple" class="select-none bg-gray-100 p-4 flex rounded-xl">
           <input type="radio" id="couple" name="tipe" value="couple" v-model="tipe.value">
           <div class="flex pl-2 lg:pl-5 items-center">
-            Berpasangan
+            Pasangan
           </div>
         </label>  
       </fieldset>
