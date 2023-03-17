@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-// import { createMetaManager } from 'vue-meta'
+import { createHead } from "@unhead/vue"
 
 import './assets/styles.css'
+import './assets/transitions.css'
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -18,8 +19,8 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faLanguage } from '@fortawesome/free-solid-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
-
 
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
@@ -28,6 +29,7 @@ library.add(faArrowUpRightFromSquare)
 library.add(faChevronDown)
 library.add(faChevronUp)
 library.add(faEnvelope)
+library.add(faLanguage)
 library.add(faPhone)
 
 library.add(faWhatsapp)
@@ -42,9 +44,17 @@ console.log('VITE_SELF_HOST=' ,import.meta.env.VITE_SELF_HOST)
 console.log('BASE_URL=' ,import.meta.env.BASE_URL)
 console.log('MODE=' ,import.meta.env.MODE)
 
+app.use(createHead())
 
 app.use(VueAxios, axios)
 
 app.component('font-awesome-icon', FontAwesomeIcon)
+/**
+ * Top-level await is not available
+ * await router.isReady()
+ */
+
 
 app.mount('#app')
+
+

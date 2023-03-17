@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-4">
-    <div class="maps-embed flex justify-center h-[350px]" v-html="hotel.gmaps" />
+    <div class="maps-embed flex justify-center h-[350px] bg-gray-50" v-html="hotel.gmaps" />
     <div class="flex flex-col gap-2 text-center">
       <p class="font-bold">{{ hotel.name }}</p>
       <p>{{ hotel.street }}</p>

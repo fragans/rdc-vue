@@ -13,7 +13,7 @@
         </span>
       </button>
     </div>
-    <transition name="slide-bottom" mode="out-in">
+    <transition name="shrink" mode="out-in">
       <div v-if="isExpanded" class="px-2 pb-2 pt-4">
         <slot name="content"></slot>  
       </div>
