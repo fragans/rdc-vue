@@ -37,7 +37,7 @@ import GoogleTranslate from './components/googleTranslate.vue'
     <RouterView />
   </Suspense>
   <teleport to="#app">
-    <google-translate class="hidden" />
+    <google-translate class="" />
   </teleport>
   <branding-footer />
 </template>
