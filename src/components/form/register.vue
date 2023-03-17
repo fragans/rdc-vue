@@ -213,14 +213,14 @@ export default {
         this.formCounter++
       } else if (this.formCounter == 2) {
         console.log('coupleHandler 2')
-        this.body.tipe_pasangan = gender,
-        this.body.name_pasangan = this.name.value,
-        this.body.address_pasangan = this.address.value,
-        this.body.city_pasangan = this.city.value,
-        this.body.tel_pasangan = this.tel.value,
-        this.body.codeArea_pasangan = this.codeArea.value,
-        this.body.country_pasangan = this.country.value,
-        this.body.email_pasangan = this.email.value
+        this.body.couple_gender = gender,
+        this.body.couple_name = this.name.value,
+        this.body.couple_address = this.address.value,
+        this.body.couple_city = this.city.value,
+        this.body.couple_phone_number = this.tel.value,
+        this.body.couple_code_area = this.codeArea.value,
+        this.body.couple_country = this.country.value,
+        this.body.couple_email = this.email.value
         this.sendForm()
       }
     },
