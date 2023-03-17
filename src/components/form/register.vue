@@ -256,7 +256,7 @@ export default {
         await this.dummyReq(res)
         console.log(res)
       } catch (error) {
-        console.log('console.error(error)');
+        console.log('console.error(error test)');
         console.error(error);
         this.fetchState.success = false
         this.fetchState.error = true
