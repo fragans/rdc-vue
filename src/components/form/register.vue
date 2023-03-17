@@ -176,13 +176,15 @@ export default {
           this.coupleHandler()
           return false
         }else if (!this.isCouple) {
+          const gender = this.formCounter == 1 ? 'male' : 'female'
           this.body = {
-            tipe: this.tipe.value,
+            type: this.tipe.value,
+            gender: gender,
             name: this.name.value,
             address: this.address.value,
             city: this.city.value,
-            tel: this.tel.value,
-            codeArea: this.codeArea.value,
+            phone_number: this.tel.value,
+            code_area: this.codeArea.value,
             country: this.country.value,
             email: this.email.value
           }
@@ -197,19 +199,21 @@ export default {
     coupleHandler () {
       const gender = this.formCounter == 1 ? 'male' : 'female'
       if (this.formCounter == 1) {
-        console.log('coupleHandler')
+        console.log('coupleHandler 1')
         
-        this.body.tipe= gender,
+        this.body.type= 'couple',
         this.body.name= this.name.value,
         this.body.address= this.address.value,
         this.body.city= this.city.value,
-        this.body.tel= this.tel.value,
-        this.body.codeArea= this.codeArea.value,
+        this.body.phone_number= this.tel.value,
+        this.body.code_area= this.codeArea.value,
         this.body.country= this.country.value,
         this.body.email= this.email.value
+        this.body.gender= gender
         this.resetForm()
         this.formCounter++
       } else if (this.formCounter == 2) {
+        console.log('coupleHandler 2')
         this.body.tipe_pasangan = gender,
         this.body.name_pasangan = this.name.value,
         this.body.address_pasangan = this.address.value,
@@ -244,14 +248,18 @@ export default {
       console.log('sedning');
       this.fetchState.loading = true
       try {
-        const res = await axios.get(
-          'https://jsonplaceholder.typicode.com/todos/1',
+        const res = await axios.post(
+          `${import.meta.env.VITE_SELF_HOST}/api-rdc/registration`,
+          // `https://rismadancecommunity.com/api-rdc/registration`,
+          this.body
         )
         await this.dummyReq(res)
+        console.log(res)
       } catch (error) {
         console.log('console.error(error)');
         console.error(error);
         this.fetchState.success = false
+        this.fetchState.error = true
         this.fetchState.sent = true
       }
       
