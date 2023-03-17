@@ -176,10 +176,9 @@ export default {
           this.coupleHandler()
           return false
         }else if (!this.isCouple) {
-          const gender = this.formCounter == 1 ? 'male' : 'female'
           this.body = {
             type: this.tipe.value,
-            gender: gender,
+            gender: this.tipe.value,
             name: this.name.value,
             address: this.address.value,
             city: this.city.value,
