@@ -249,7 +249,7 @@ export default {
       this.fetchState.loading = true
       try {
         const res = await axios.post(
-          `${import.meta.env.VITE_SELF_HOST}/api-rdc/registration`,
+          `${import.meta.env.VITE_API_HOST}/api-rdc/registration`,
           // `https://rismadancecommunity.com/api-rdc/registration`,
           this.body
         )
