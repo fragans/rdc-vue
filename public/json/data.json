@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "title": "INDONESIA OPEN INTERNATIONAL LINEDANCE COMPETITION",
+      "title": "INDONESIA OPEN INTERNATIONAL DANCE COMPETITION",
       "dateStart": "5/19/2023",
       "dateStartUnix": "1684429200",
       "dateEnd": "5/20/2023",
@@ -13,7 +13,7 @@
         "name": "Princess Keisha Hotel & Convention Center",
         "street": "Jl. Teuku Umar Barat No.350, Denpasar, Bali 80119"
       },
-      "description": "Come join us in Austin TX for Country Dance Competitions, Swing Competitions and Linedance Competitions. We're working on getting you an awesome line-up of staff for Texas Classic 2023! We will have workshops and social dancing both Friday and Saturday night. ",
+      "description": "",
       "category": "internasional",
       "thumbnail": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
       "url": "api.domainname.com/register",
@@ -66,7 +66,9 @@
         {
           "label": "Scrutineers",
           "names": [
-            "Clive Eaton-Stevens"
+            "Clive Eaton-Stevens",
+            "Dewa Nyoman Kandel Eka Putra",
+            "AA Istri Inten Pradnyandari"
           ]
         },
         

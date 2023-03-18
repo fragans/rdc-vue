@@ -31,13 +31,24 @@ import GoogleTranslate from './components/googleTranslate.vue'
 </script>
 
 <template>
+  <div class="min-h-screen w-full">
+    <!-- <branding-header /> -->
+    <Suspense>
+      <template #default>
+        <RouterView />  
+      </template>
+      <template #fallback>
+        <div class="min-h-screen w-full">
+          loading..  
+        </div>
+        
+      </template>
+    </Suspense>
+    
   
-  <!-- <branding-header /> -->
-  <Suspense>
-    <RouterView />
-  </Suspense>
-  <teleport to="#app">
-    <google-translate class="" />
-  </teleport>
-  <branding-footer />
+    <teleport to="#app">
+      <google-translate class="" />
+    </teleport>
+    <branding-footer />
+  </div>
 </template>
