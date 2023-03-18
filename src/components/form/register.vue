@@ -98,7 +98,7 @@
 <script>
 
 import FormTitle from '../form/title.vue'
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'FormRegister',
   components:{
@@ -245,18 +245,33 @@ export default {
     },
     async sendForm () {
       console.log('sedning');
+      // await this.dummyReq(res)
+      const url = 'https://api.rismadancecommunity.com/api-rdc/registration'
       this.fetchState.loading = true
+      // try {
+      //   const res = await axios.post(
+      //     url,
+      //     this.body
+      //   )
+      //   console.log(res)
+      // } catch (error) {
+      //   console.log('console.error(error test#2)');
+      //   console.error(error);
+      //   this.fetchState.success = false
+      //   this.fetchState.error = true
+      //   this.fetchState.sent = true
+      // }
       try {
-        const res = await axios.post(
-          `${import.meta.env.VITE_API_HOST}/api-rdc/registration`,
-          // `https://rismadancecommunity.com/api-rdc/registration`,
-          this.body
-        )
-        await this.dummyReq(res)
-        console.log(res)
-      } catch (error) {
-        console.log('console.error(error test#2)');
-        console.error(error);
+        const requestOptions = {
+          method: 'POST',
+          body: JSON.stringify(this.body),
+          redirect: 'follow'
+        }
+        const res = await fetch(url, requestOptions)
+        console.log(res.text())
+        await this.dummyReq()
+      }catch (err) {
+        console.error(err)
         this.fetchState.success = false
         this.fetchState.error = true
         this.fetchState.sent = true
