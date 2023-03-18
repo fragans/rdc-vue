@@ -1,10 +1,10 @@
 <template>
-  <div @click="deploy" class="fixed top-14 cursor-pointer flex justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 shadow-lg">
-    <transition mode="out-in" name="shrink">
+  <div class="fixed top-14 cursor-pointer flex justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 shadow-lg">
+    <transition mode="out-in" name="shrink" appear>
       <div id="google_translate_element" class=""></div>
     </transition>
 
-    <transition mode="out-in" name="shrink">
+    <transition mode="out-in" name="shrink" appear>
       <div v-show="!isDeployed">
         <span class="px-4">
           <font-awesome-icon icon="fa-solid fa-language" size="2xl"   />
@@ -16,10 +16,35 @@
 
 <script>
 import { useCookies } from "vue3-cookies";
+import { useHead } from "@unhead/vue"
 import { ref } from "vue"
 export default {
   name: 'GoogleTranslate',
   setup() {
+    useHead({
+      script: [
+        {
+          hid: 'google-translate',
+          src: '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+          async: true,
+          onload: async (el)=> {
+            console.log('loaded', el);
+            setInterval(()=> {
+              // eslint-disable-next-line no-undef
+              new google.translate.TranslateElement(
+                {
+                  pageLanguage: 'id',
+                  // eslint-disable-next-line no-undef
+                  layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                },
+                'google_translate_element')
+            }, 1500)
+            
+          }
+        }
+      ]
+    }, { mode: 'client' })
+
     const { cookies } = useCookies();
     const isDeployed = ref(false)
     return {isDeployed, cookies}
@@ -37,7 +62,6 @@ export default {
           },
           'google_translate_element');
       },500)
-      this.isDeployed = true
       
     }
   },

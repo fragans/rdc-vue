@@ -66,7 +66,6 @@
 
 <script>
 import { ref } from "vue"
-import { useHead } from '@unhead/vue'
 
 import axios from 'axios'
 
@@ -78,15 +77,6 @@ import FormRegister from "../components/form/register.vue"
 export default{
   async setup (){
     let isError = ref(false)
-    useHead({
-      script: [
-        {
-          hid: 'google-translate',
-          src: '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
-          async: true
-        }
-      ]
-    })
     
     const event = ref(null)
     try {
