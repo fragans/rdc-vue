@@ -185,7 +185,16 @@ export default {
             phone_number: this.tel.value,
             code_area: this.codeArea.value,
             country: this.country.value,
-            email: this.email.value
+            email: this.email.value,
+            // biar ga error 500
+            couple_gender: '',
+            couple_name: '',
+            couple_address: '',
+            couple_city: '',
+            couple_phone_number: '',
+            couple_code_area: '',
+            couple_country: '',
+            couple_email: ''
           }
           this.sendForm()
         }
@@ -245,22 +254,8 @@ export default {
     },
     async sendForm () {
       console.log('sedning');
-      // await this.dummyReq(res)
       const url = 'https://api.rismadancecommunity.com/api-rdc/registration'
       this.fetchState.loading = true
-      // try {
-      //   const res = await axios.post(
-      //     url,
-      //     this.body
-      //   )
-      //   console.log(res)
-      // } catch (error) {
-      //   console.log('console.error(error test#2)');
-      //   console.error(error);
-      //   this.fetchState.success = false
-      //   this.fetchState.error = true
-      //   this.fetchState.sent = true
-      // }
       try {
         const requestOptions = {
           method: 'POST',
