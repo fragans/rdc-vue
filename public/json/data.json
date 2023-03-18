@@ -95,52 +95,6 @@
           "label": "Contact 2",
           "phone": "Mitha +62 818-0863-0108"
         }
-      ],
-      "formInputBodyBuatBackend0": [
-        {
-          "tipe": "male",
-          "name": "",
-          "address": "",
-          "city": "",
-          "tel": "",
-          "codeArea": "",
-          "country": "",
-          "email": ""
-        }
-      ],
-      "formInputBodyBuatBackend1": [
-        {
-          "tipe": "female",
-          "name": "",
-          "address": "",
-          "city": "",
-          "tel": "",
-          "codeArea": "",
-          "country": "",
-          "email": ""
-        }
-      ],
-      "formInputBodyBuatBackend2": [
-        {
-          "tipe": "female",
-          "name": "",
-          "address": "",
-          "city": "",
-          "tel": "",
-          "codeArea": "",
-          "country": "",
-          "email": ""
-        },
-        {
-          "tipe": "male",
-          "name": "",
-          "address": "",
-          "city": "",
-          "tel": "",
-          "codeArea": "",
-          "country": "",
-          "email": ""
-        }
       ]
     }
   ]
