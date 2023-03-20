@@ -27,8 +27,7 @@ export default {
           hid: 'google-translate',
           src: '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
           async: true,
-          onload: async (el)=> {
-            console.log('loaded', el);
+          onload: async ()=> {
             setInterval(()=> {
               // eslint-disable-next-line no-undef
               new google.translate.TranslateElement(
