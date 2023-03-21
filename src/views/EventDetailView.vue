@@ -104,7 +104,7 @@ export default{
   computed: {
     backgroundImage () {
       return {
-        backgroundImage: `url(${import.meta.env.VITE_SELF_HOST}/images/poster_rdc.jpeg)`
+        backgroundImage: `url(${import.meta.env.VITE_SELF_HOST}${this.event.thumbnail})`
       }
     }
   }
