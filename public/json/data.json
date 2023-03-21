@@ -13,10 +13,35 @@
         "name": "Prama Sanur Beach Hotel Bali",
         "street": "Jl. Cemara, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228"
       },
+      "dances":[
+        {
+          "level": "Primary Newcomer",
+          "musics": [
+            {
+              "genre":"street",
+              "name":"Shaky Freeze",
+              "links": [
+                {
+                  "label": "Stepsheet",
+                  "url": "drive.google.com/url"
+                },
+                {
+                  "label": "",
+                  "url": "drive.google.com/url"
+                },
+                {
+                  "label": ""
+                  "url": "drive.google.com/url"
+                },
+              ]
+              
+            }
+          ]
+        }
+      ],
       "description": "",
       "category": "internasional",
       "thumbnail": "/images/poster_rdc.jpeg",
-      "url": "api.domainname.com/register",
       "staff": [
         {
           "label": "Event Director",
