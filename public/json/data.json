@@ -1,19 +1,19 @@
 {
   "events": [
     {
-      "title": "INDONESIA OPEN INTERNATIONAL LINEDANCE COMPETITION",
+      "title": "INDONESIA OPEN INTERNATIONAL DANCE COMPETITION",
       "dateStart": "5/19/2023",
       "dateStartUnix": "1684429200",
       "dateEnd": "5/20/2023",
       "dateEndUnix": "1684515600",
       "location": "Indonesia, Bali",
       "hotel":{
-        "gmaps": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3911.505094442788!2d115.18586019787351!3d-8.679662319883848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240ccffffffed%3A0x6d604d2b874a6637!2sCollection%20O%20499%20Princess%20Keisha%20Hotel%20%26%20Convention%20Center!5e0!3m2!1sen!2sid!4v1678605672899!5m2!1sen!2sid\" width=\"350\" height=\"350\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
-        "direction": "https://goo.gl/maps/yD8RwCfTmWQN1roi9",
-        "name": "Princess Keisha Hotel & Convention Center",
-        "street": "Jl. Teuku Umar Barat No.350, Denpasar, Bali 80119"
+        "gmaps": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d2731.3072260504737!2d115.25462715849332!3d-8.709228786481944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd24195a152d397%3A0x3210af7ce6be459a!2sPrama%20Sanur%20Beach%20Hotel%20Bali!5e0!3m2!1sen!2sid!4v1679228661639!5m2!1sen!2sid\" width=\"350\" height=\"350\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+        "direction": "https://goo.gl/maps/HEbeHiZ3D1w9of7cA",
+        "name": "Prama Sanur Beach Hotel Bali",
+        "street": "Jl. Cemara, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228"
       },
-      "description": "Come join us in Austin TX for Country Dance Competitions, Swing Competitions and Linedance Competitions. We're working on getting you an awesome line-up of staff for Texas Classic 2023! We will have workshops and social dancing both Friday and Saturday night. ",
+      "description": "",
       "category": "internasional",
       "thumbnail": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
       "url": "api.domainname.com/register",
@@ -66,7 +66,8 @@
         {
           "label": "Scrutineers",
           "names": [
-            "Clive Eaton-Stevens"
+            "Dewa Nyoman Kandel Eka Putra",
+            "AA Istri Inten Pradnyandari"
           ]
         },
         
@@ -92,52 +93,6 @@
         {
           "label": "Contact 2",
           "phone": "Mitha +62 818-0863-0108"
-        }
-      ],
-      "formInputBodyBuatBackend0": [
-        {
-          "tipe": "male",
-          "name": "",
-          "address": "",
-          "city": "",
-          "tel": "",
-          "codeArea": "",
-          "country": "",
-          "email": ""
-        }
-      ],
-      "formInputBodyBuatBackend1": [
-        {
-          "tipe": "female",
-          "name": "",
-          "address": "",
-          "city": "",
-          "tel": "",
-          "codeArea": "",
-          "country": "",
-          "email": ""
-        }
-      ],
-      "formInputBodyBuatBackend2": [
-        {
-          "tipe": "female",
-          "name": "",
-          "address": "",
-          "city": "",
-          "tel": "",
-          "codeArea": "",
-          "country": "",
-          "email": ""
-        },
-        {
-          "tipe": "male",
-          "name": "",
-          "address": "",
-          "city": "",
-          "tel": "",
-          "codeArea": "",
-          "country": "",
-          "email": ""
         }
       ]
     }

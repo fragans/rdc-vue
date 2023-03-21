@@ -98,7 +98,7 @@
 <script>
 
 import FormTitle from '../form/title.vue'
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'FormRegister',
   components:{
@@ -176,17 +176,25 @@ export default {
           this.coupleHandler()
           return false
         }else if (!this.isCouple) {
-          const gender = this.formCounter == 1 ? 'male' : 'female'
           this.body = {
             type: this.tipe.value,
-            gender: gender,
+            gender: this.tipe.value,
             name: this.name.value,
             address: this.address.value,
             city: this.city.value,
             phone_number: this.tel.value,
             code_area: this.codeArea.value,
             country: this.country.value,
-            email: this.email.value
+            email: this.email.value,
+            // biar ga error 500
+            couple_gender: '',
+            couple_name: '',
+            couple_address: '',
+            couple_city: '',
+            couple_phone_number: '',
+            couple_code_area: '',
+            couple_country: '',
+            couple_email: ''
           }
           this.sendForm()
         }
@@ -214,14 +222,14 @@ export default {
         this.formCounter++
       } else if (this.formCounter == 2) {
         console.log('coupleHandler 2')
-        this.body.tipe_pasangan = gender,
-        this.body.name_pasangan = this.name.value,
-        this.body.address_pasangan = this.address.value,
-        this.body.city_pasangan = this.city.value,
-        this.body.tel_pasangan = this.tel.value,
-        this.body.codeArea_pasangan = this.codeArea.value,
-        this.body.country_pasangan = this.country.value,
-        this.body.email_pasangan = this.email.value
+        this.body.couple_gender = gender,
+        this.body.couple_name = this.name.value,
+        this.body.couple_address = this.address.value,
+        this.body.couple_city = this.city.value,
+        this.body.couple_phone_number = this.tel.value,
+        this.body.couple_code_area = this.codeArea.value,
+        this.body.couple_country = this.country.value,
+        this.body.couple_email = this.email.value
         this.sendForm()
       }
     },
@@ -246,18 +254,19 @@ export default {
     },
     async sendForm () {
       console.log('sedning');
+      const url = 'https://api.rismadancecommunity.com/api-rdc/registration'
       this.fetchState.loading = true
       try {
-        const res = await axios.post(
-          `${import.meta.env.VITE_API_HOST}/api-rdc/registration`,
-          // `https://rismadancecommunity.com/api-rdc/registration`,
-          this.body
-        )
-        await this.dummyReq(res)
-        console.log(res)
-      } catch (error) {
-        console.log('console.error(error)');
-        console.error(error);
+        const requestOptions = {
+          method: 'POST',
+          body: JSON.stringify(this.body),
+          redirect: 'follow'
+        }
+        const res = await fetch(url, requestOptions)
+        console.log(res.text())
+        await this.dummyReq()
+      }catch (err) {
+        console.error(err)
         this.fetchState.success = false
         this.fetchState.error = true
         this.fetchState.sent = true
