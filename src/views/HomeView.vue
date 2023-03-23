@@ -1,8 +1,16 @@
 <template>
-  <div class="about">
-    <h1>RDC</h1>
-  </div>
+  <main class="about">
+    <section class="min-h-screen">
+      <event-loop />
+    </section>
+  </main>
 </template>
 
-<style>
-</style>
+<script>
+import EventLoop from '../components/event/loop.vue'
+export default {
+  components: {
+    EventLoop
+  }
+}
+</script>
