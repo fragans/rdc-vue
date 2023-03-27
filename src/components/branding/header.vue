@@ -43,7 +43,7 @@ export default {
     }
   },
   async created() {
-    const res = await this.axios.get(`${import.meta.env.VITE_SELF_HOST}json/menu.json`)
+    const res = await this.axios.get(`${import.meta.env.VITE_SELF_HOST}/json/menu.json`)
     this.items = res.data.menus
   }
 }
