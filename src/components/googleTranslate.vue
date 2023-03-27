@@ -1,12 +1,12 @@
 <template>
-  <div class="fixed top-14 cursor-pointer flex justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 shadow-lg">
+  <div class="fixed top-2 cursor-pointer flex justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 z-30">
     <transition mode="out-in" name="shrink" appear>
       <div id="google_translate_element" class=""></div>
     </transition>
 
     <transition mode="out-in" name="shrink" appear>
       <div v-show="!isDeployed">
-        <span class="px-4">
+        <span class="px-4" @click="deploy()">
           <font-awesome-icon icon="fa-solid fa-language" size="2xl"   />
         </span>
       </div>
@@ -30,13 +30,13 @@ export default {
           onload: async ()=> {
             setInterval(()=> {
               // eslint-disable-next-line no-undef
-              new google.translate.TranslateElement(
-                {
-                  pageLanguage: 'id',
-                  // eslint-disable-next-line no-undef
-                  layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL
-                },
-                'google_translate_element')
+              // new google.translate.TranslateElement(
+              //   {
+              //     pageLanguage: 'id',
+              //     // eslint-disable-next-line no-undef
+              //     layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL
+              //   },
+              //   'google_translate_element')
             }, 1500)
             
           }
@@ -60,6 +60,7 @@ export default {
             layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
           },
           'google_translate_element');
+          this.isDeployed = true
       },500)
       
     }

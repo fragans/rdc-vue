@@ -1,0 +1,8 @@
+{
+  "menus": [
+    {"label": "Beranda","url": "/"},
+    {"label": "Acara","url": "/event"},
+    {"label": "Kontak Kami","url": "#footer"},
+    {"label": "Tentang Kami","url": "/about"}
+  ]
+}

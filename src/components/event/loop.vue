@@ -1,13 +1,12 @@
 <template> 
-  <div class="max-w-4xl mx-auto bg-gray-100 px-4">
-    <h2 class="text-2xl px-4 py-2">Events</h2>
+  <div class="py-4">
     <div v-if="isError">
       Terjadi kesalahan. muat ulang halaman ini
     </div>
     <template v-else>
       <Suspense>
         <template #default>
-          <div class="post-loop grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="post-loop grid grid-cols-1 gap-4">
             <card-event v-for="(item, key) in events" :item="item" :key="key" />
           </div>
         </template>
@@ -37,7 +36,7 @@ export default{
       
       const url = `${import.meta.env.VITE_API_HOST}/api-rdc/event`
       const res = await axios.get(url)
-      console.log(res)
+      // console.log(res)
       const { 
         data : {
           data: {

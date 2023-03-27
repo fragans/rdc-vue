@@ -5,6 +5,8 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { createHead } from "@unhead/vue"
 
+import './assets/custom.css'
+import './assets/font.css'
 import './assets/styles.css'
 import './assets/transitions.css'
 
@@ -18,9 +20,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faLanguage } from '@fortawesome/free-solid-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faClose } from '@fortawesome/free-solid-svg-icons'
 
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
@@ -28,9 +33,13 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 library.add(faArrowUpRightFromSquare)
 library.add(faChevronDown)
 library.add(faChevronUp)
+library.add(faChevronRight)
 library.add(faEnvelope)
 library.add(faLanguage)
 library.add(faPhone)
+library.add(faBars)
+library.add(faClose)
+
 
 library.add(faWhatsapp)
 

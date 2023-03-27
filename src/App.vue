@@ -1,12 +1,13 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import BrandingFooter from './components/branding/footer.vue'
+import BrandingHeader from './components/branding/header.vue'
 import GoogleTranslate from './components/googleTranslate.vue'
 </script>
 
 <template>
-  <div class="min-h-screen w-full">
-    <!-- <branding-header /> -->
+  <div class="min-h-screen w-full md:pt-[160px] pt-20">
+    <branding-header />
     <Suspense>
       <template #default>
         <RouterView />  
