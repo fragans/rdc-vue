@@ -7,7 +7,7 @@
       <span class="block border border-gray-300 rounded-full w-4 h-4" />
       <span class="block bg-gray-200 w-1 h-full" />
     </div>
-    <router-link to="/">
+    <router-link :to="`/event/${item.id}`">
       <div class="xl:max-w-3xl lg:max-w-2xl md:max-w-md rounded overflow-hidden">
         <div class="md:px-6 py-4">
           <span class="inline-block md:hidden capitalize  text-gray-500 rounded-full py-1 text-sm font-semibold mr-2 mb-2">{{ dateFormatter }}</span>
