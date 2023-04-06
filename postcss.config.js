@@ -1,6 +1,5 @@
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
+/** @type {import('tailwindcss').Config} */
+export const plugins = {
+tailwindcss: {},
+autoprefixer: {},
+};
