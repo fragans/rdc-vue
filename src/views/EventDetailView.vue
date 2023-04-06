@@ -1,5 +1,5 @@
 <template> 
-  <div class="max-w-4xl mx-auto bg-gray-100">
+  <div class="max-w-4xl mx-auto bg-gray-100 min-h-screen">
     <div v-if="isError">
       Terjadi kesalahan. muat ulang halaman ini
     </div>
