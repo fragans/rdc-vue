@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     async fetchHomeJson() {
-      const res = await axios.get(`${import.meta.env.VITE_SELF_HOST}/json/home.json`)
+      const res = await axios.get(`/json/home.json`)
       const { data } = res
       console.log(data)
       return data
