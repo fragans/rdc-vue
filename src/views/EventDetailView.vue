@@ -82,7 +82,7 @@ export default{
     const event = ref(null)
     try {
       
-      const url = `${import.meta.env.VITE_SELF_HOST}/json/data.json`
+      const url = `/json/data.json`
       const res = await axios.get(url)
       const { data : {
         events: [first]
@@ -105,7 +105,7 @@ export default{
   computed: {
     backgroundImage () {
       return {
-        backgroundImage: `url(${import.meta.env.VITE_SELF_HOST}${this.event.thumbnail})`
+        backgroundImage: `url(${this.event.thumbnail})`
       }
     }
   }
