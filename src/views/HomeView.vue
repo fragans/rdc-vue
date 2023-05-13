@@ -39,32 +39,12 @@
   </main>
 </template>
 
-<script>
+<script setup>
 import EventLoop from '../components/event/loop.vue'
 import EventLoopHeader from '../components/event/loopHeader.vue'
 import axios from 'axios'
-export default {
-  components: {
-    EventLoop,
-    EventLoopHeader
-  },
-  data() { 
-    return {
-      home: ''
-    }
-  },
-  methods: {
-    async fetchHomeJson() {
-      const res = await axios.get(`/json/home.json`)
-      const { data } = res
-      console.log(data)
-      return data
-    }
-  },  
-  async created () {
-    console.log('mounted')
-    const home = await this.fetchHomeJson()
-    this.home = home
-  },
-}
+const res = await axios.get(`/json/home.json`)
+const { data } = res
+const home = data
+
 </script>

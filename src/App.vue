@@ -6,7 +6,7 @@ import GoogleTranslate from './components/googleTranslate.vue'
 </script>
 
 <template>
-  <div class="min-h-screen w-full md:pt-[160px] pt-20">
+  <div class="min-h-screen w-full md:pt-[160px] pt-[72px]">
     <branding-header />
     <Suspense>
       <template #default>

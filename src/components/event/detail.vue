@@ -103,7 +103,7 @@ export default{
   computed: {
     backgroundImage () {
       return {
-        backgroundImage: `url(${import.meta.env.VITE_SELF_HOST}${this.event.thumbnail})`
+        backgroundImage: `url(${this.event.thumbnail})`
       }
     }
   }
