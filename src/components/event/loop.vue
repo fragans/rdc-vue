@@ -33,8 +33,8 @@ export default{
     
     const events = ref(null)
     try {
-      
-      const url = `${import.meta.env.VITE_API_HOST}/api-rdc/event`
+      // https://api.rismadancecommunity.com/api-rdc/registration
+      const url = `https://api.rismadancecommunity.com/api-rdc/event`
       const res = await axios.get(url)
       // console.log(res)
       const { 

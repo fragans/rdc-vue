@@ -39,11 +39,11 @@ export default {
   },
   computed: {
     imageLink () {
-      return `${import.meta.env.VITE_SELF_HOST}/images/RDCv2.png`
+      return `/images/RDCv2.png`
     }
   },
   async created() {
-    const res = await this.axios.get(`${import.meta.env.VITE_SELF_HOST}/json/menu.json`)
+    const res = await this.axios.get(`/json/menu.json`)
     this.items = res.data.menus
   }
 }
