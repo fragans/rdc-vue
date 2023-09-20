@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-2 cursor-pointer flex justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 z-30">
+  <div :class="[isGoingDown ? 'hidden' : 'flex']" class="fixed top-2 cursor-pointer  justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 z-30">
     <transition mode="out-in" name="shrink" appear>
       <div id="google_translate_element" class=""></div>
     </transition>
@@ -17,6 +17,7 @@
 <script>
 import { useCookies } from "vue3-cookies";
 import { useHead } from "@unhead/vue"
+import { useScroll } from '@/composables/useScroll'
 import { ref } from "vue"
 export default {
   name: 'GoogleTranslate',
@@ -46,7 +47,9 @@ export default {
 
     const { cookies } = useCookies();
     const isDeployed = ref(false)
-    return {isDeployed, cookies}
+    const { isGoingDown } = useScroll()
+
+    return {isDeployed, cookies, isGoingDown}
   },
   methods: {
     async deploy(){

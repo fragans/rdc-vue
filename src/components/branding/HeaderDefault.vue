@@ -1,7 +1,9 @@
 <template>
   <div class="bg-white fixed top-0 w-full px-3 py-3 z-20 shadow-lg ">
     <div class="max-w-6xl mx-auto">
-      <img :src="imageLink" height="100" class="h-24 mx-auto hidden md:block" alt="">
+      <transition name="shrink">
+        <img v-show="!isGoingDown" :src="imageLink" height="100" class="h-24 mx-auto hidden md:block" alt="">
+      </transition>
       <div class="main-menu flex ">
         <button class="md:hidden h-12 w-12 rounded-lg" @click="isOpen = !isOpen">
           <font-awesome-icon v-if="!isOpen" icon="fa-solid fa-bars" size="xl" />
@@ -27,23 +29,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  name:'HeaderDefault',
-  data() {
-    return {
-      items: [],
-      isOpen: false
-    }
-  },
-  computed: {
-    imageLink () {
-      return `/images/RDCv2.png`
-    }
-  },
-  async created() {
-    const res = await this.axios.get(`/json/menu.json`)
-    this.items = res.data.menus
-  }
+<script setup>
+import { useScroll } from '@/composables/useScroll'
+import axios from 'axios'
+import {ref, computed } from 'vue'
+const items = ref([])
+const isOpen = ref(false)
+
+const { isGoingDown } = useScroll()
+
+const imageLink = computed(()=> {
+  return `/images/RDCv2.png`
+})
+
+const fetchMenuJson = async () => {
+  const res = await axios.get(`/json/menu.json`)
+  const {data: {menus}} = res
+  items.value = menus
 }
+
+await fetchMenuJson()
+
 </script>

@@ -35,7 +35,6 @@ export default{
     try {
       // https://api.rismadancecommunity.com/api-rdc/registration
       const url = `${import.meta.env.VITE_API_HOST}/api-rdc/event`
-      console.log({url});
       const res = await axios.get(url)
       // console.log(res)
       const { 
