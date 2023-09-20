@@ -1,21 +1,21 @@
 {
   "banner": {
     "title": "Risma Dance Community",
-    "description": "Watch Luis' popular inspiring talk, Exercise & Empowerment, and subscribe to download an exclusive resource that will help you create your own exercise and empowerment plan.",
+    "description": "Explore the vibrant world of dance with Risma Dance Community! Our website offers easy event registration, connecting passionate dancers to exciting dance experiences.",
     "media": ""
   },
   "story": {
     "title": "risma story",
     "description":[
-      "As a professional athlete, Luis Mendez knows a thing or two about exercise. Since High School, Luis has trained to be a professional boxer, training and working out almost every day along the way.",
-      "Throughout this, Luis has seen the power of exercise in empowering you to take responsibility for yourself, feel strong, care for your mental health, and take a break from the stresses of life. This talk shares his thoughts on the topic."
+      "Risma Yulana is a dance enthusiast with a remarkable journey in Indonesia's dance scene. She's the driving force behind Risma Dance Community (RDC), where her passion for dance comes to life. As an Ambassador for the United Country Western Dance Council (UCWDC) in Indonesia, Risma proudly represents her country on the global stage. She also wears the hat of Event Director for the Indonesia Open International Line Dance Competition, showcasing her organizational skills. With UCWDC certification as a Line Dance Instructor, she's a go-to source for those eager to learn this dance style. Risma is a creative choreographer for international line dance competitions too, making her a prominent figure in the dance world.",
+      "Risma Yulana's dance journey is both inspiring and diverse. She's not only an ambassador and instructor but also a hands-on organizer and choreographer. Her role as a UCWDC Ambassador means she's a cultural bridge, representing Indonesia's dance community globally. Her work as Event Director for the Indonesia Open International Line Dance Competition underscores her commitment to fostering a sense of unity and competition. Whether she's teaching, creating captivating dance moves, or representing her country, Risma's influence on the international dance stage is undeniable, inspiring many to embrace the joy of line dancing."
     ],
     "avatar": "https://embed.filekitcdn.com/e/2owDSJCEZcjwZhVLK4rMrK/dL9CpSnb4tcQzzwzYTy5o",
     "caption": ""
   },
   "newsletter": {
     "title": "Recent Events",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus illum eligendi esse aliquam soluta, placeat voluptatem",
+    "description": "Subscribe to our email newsletter for exclusive updates, offers, and insights delivered directly to your inbox. Stay connected with us!",
     "placeholder": "Subscribe via email",
     "button": "subscribe",
     "action": "/"

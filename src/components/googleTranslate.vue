@@ -1,5 +1,5 @@
 <template>
-  <div :class="[isGoingDown ? 'hidden' : 'flex']" class="fixed top-2 cursor-pointer  justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 z-30">
+  <div :class="[isGoingDown ? 'lg:hidden flex' : 'flex']" class="fixed top-2 cursor-pointer  justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 z-30">
     <transition mode="out-in" name="shrink" appear>
       <div id="google_translate_element" class=""></div>
     </transition>

@@ -27,12 +27,12 @@
       <div class="profile flex flex-col items-center justify-center pt-10" v-if="home">
         <div class="w-32 h-32  bg-cover bg-center rounded-full"  :style="{backgroundImage: `url(${home.story.avatar})`}"></div>
         <span class="text-4xl font-anton pt-6">Risma Yulana</span>
-        <span>Athlete, speaker, influencer. </span>
+        <span>Passionate, Dedicated, Inspiring </span>
       </div>
       
     </section>
     <section class="events max-w-6xl mx-auto bg-gray-100 px-4 min-h-screen">
-      <event-loop-header />
+      <event-loop-header :data="home.newsletter" />
       <event-loop />
     </section>
     
