@@ -6,8 +6,8 @@
     <template v-else>
       <Suspense>
         <template #default>
-          <div class="post-loop grid grid-cols-1 gap-4">
-            <card-event v-for="(item, key) in events" :item="item" :key="key" />
+          <div class="post-loop grid grid-cols-1 gap-4 lg:gap-0">
+            <card-event v-for="(item, key) in events" :item="item" :key="key" class="w-full"/>
           </div>
         </template>
         <template #fallback>
@@ -34,7 +34,7 @@ export default{
     const events = ref(null)
     try {
       // https://api.rismadancecommunity.com/api-rdc/registration
-      const url = `${import.meta.env.VITE_API_HOST}/api-rdc/event`
+      const url = `${import.meta.env.VITE_API_HOST}/api-rdc/event?status=draft`
       const res = await axios.get(url)
       // console.log(res)
       const { 

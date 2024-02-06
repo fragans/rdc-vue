@@ -1,8 +1,7 @@
 {
   "menus": [
-    {"label": "Beranda","url": "/"},
-    {"label": "Acara","url": "/event"},
-    {"label": "Kontak Kami","url": "#footer"},
+    {"label": "Acara","url": "/events"},
+    {"label": "Kontak","url": "/contact"},
     {"label": "Tentang Kami","url": "/about"}
   ]
 }

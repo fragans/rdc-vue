@@ -2,9 +2,9 @@
   "events": [
     {
       "title": "INDONESIA OPEN INTERNATIONAL DANCE COMPETITION",
-      "dateStart": "5/19/2023",
+      "dateStart": "5/18/2024",
       "dateStartUnix": "1684429200",
-      "dateEnd": "5/20/2023",
+      "dateEnd": "5/19/2024",
       "dateEndUnix": "1684515600",
       "location": "Indonesia, Bali",
       "hotel":{
@@ -40,7 +40,7 @@
       ],
       "description": "",
       "category": "internasional",
-      "thumbnail": "/images/poster_rdc.jpeg",
+      "thumbnail": "/images/IOIDC_2024.jpeg",
       "staff": [
         {
           "label": "Event Director",
@@ -64,8 +64,13 @@
           "label": "Registration",
           "names": [
             "Fitri Paramitha",
-            "Fauza Koe Yumiko Takashi",
             "Duma Kristina"
+          ]
+        },
+        {
+          "label": "Sponsorship Division",
+          "names": [
+            "Andy Arthur"
           ]
         },
         {

@@ -208,7 +208,6 @@ export default {
       const gender = this.formCounter == 1 ? 'male' : 'female'
       if (this.formCounter == 1) {
         console.log('coupleHandler 1')
-        
         this.body.type= 'couple',
         this.body.name= this.name.value,
         this.body.address= this.address.value,
@@ -256,6 +255,7 @@ export default {
       console.log('sedning');
       const url = 'https://api.rismadancecommunity.com/api-rdc/registration'
       this.fetchState.loading = true
+      this.body.id_event = 'abc'
       try {
         const requestOptions = {
           method: 'POST',

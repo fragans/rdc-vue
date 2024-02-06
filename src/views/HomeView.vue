@@ -11,9 +11,9 @@
       </div>
     </section>
 
-    <section class="video md:px-10 max-w-6xl mx-auto">
-      <div class="bg-gray-200 pb-[56.25%] w-full"></div>
-    </section>
+    <!-- <section class="video md:px-10 max-w-6xl mx-auto">
+      <div class="bg-gray-200 pb-[177.77%] w-full bg-cover" :style="{backgroundImage: 'url(/public/images/risma_dance.png)'}"></div>
+    </section> -->
 
     <section class="story px-8 py-8 max-w-4xl mx-auto">
       <div class="flex flex-col gap-4">
@@ -25,7 +25,7 @@
         <hr class="border border-black mt-8"/>
       </div>
       <div class="profile flex flex-col items-center justify-center pt-10" v-if="home">
-        <div class="w-32 h-32  bg-cover bg-center rounded-full"  :style="{backgroundImage: `url(${home.story.avatar})`}"></div>
+        <div class="w-32 h-32  bg-cover bg-center rounded-full"  :style="{backgroundImage: `url(/public/images/risma_face.jpeg)`}"></div>
         <span class="text-4xl font-anton pt-6">Risma Yulana</span>
         <span>Passionate, Dedicated, Inspiring </span>
       </div>

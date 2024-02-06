@@ -1,5 +1,5 @@
 <template>
-  <div :class="[isGoingDown ? 'lg:hidden flex' : 'flex']" class="fixed top-2 cursor-pointer  justify-center items-center right-6 rounded-lg text-white bg-amber-400 w-auto h-14 z-30">
+  <div :class="[isGoingDown ? 'lg:hidden flex' : 'flex']" class="cursor-pointer  justify-center items-center rounded-lg bg-amber-100 text-amber-400 w-auto h-14 z-30">
     <transition mode="out-in" name="shrink" appear>
       <div id="google_translate_element" class=""></div>
     </transition>
@@ -30,6 +30,11 @@ export default {
           async: true,
           onload: async ()=> {
             setInterval(()=> {
+              const selectEl = document.getElementById('google_translate_element')
+              // console.log(selectEl);
+              selectEl.style.background = '#ddd'
+              selectEl.style.borderRadius = '8px'
+              console.log(window.google.translate.TranslateElement().getInstance());
               // eslint-disable-next-line no-undef
               // new google.translate.TranslateElement(
               //   {

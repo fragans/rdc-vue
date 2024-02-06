@@ -6,7 +6,8 @@ import GoogleTranslate from './components/googleTranslate.vue'
 </script>
 
 <template>
-  <div class="min-h-screen w-full md:pt-[160px] pt-[72px]">
+  <div class="min-h-screen w-full pt-[72px] text-gray-700">
+    <!-- md:pt-[160px] pt-[72px] -->
     <Suspense>
       <BrandingHeader />
     </Suspense>
@@ -27,9 +28,9 @@ import GoogleTranslate from './components/googleTranslate.vue'
     </Suspense>
     
   
-    <teleport to="#app">
+    <!-- <teleport to="#app">
       <google-translate />
-    </teleport>
+    </teleport> -->
     <branding-footer />
   </div>
 </template>
